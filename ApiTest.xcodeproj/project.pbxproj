@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A5A6FA8B1AE654B5001994DF /* UITestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A6FA8A1AE654B5001994DF /* UITestTableViewController.m */; };
 		A5AC5C671AE64ADA00822C44 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AC5C661AE64ADA00822C44 /* main.m */; };
 		A5AC5C6A1AE64ADA00822C44 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AC5C691AE64ADA00822C44 /* AppDelegate.m */; };
 		A5AC5C6D1AE64ADA00822C44 /* ApiTest.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5AC5C6B1AE64ADA00822C44 /* ApiTest.xcdatamodeld */; };
@@ -15,6 +16,7 @@
 		A5AC5C751AE64ADA00822C44 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5AC5C741AE64ADA00822C44 /* Images.xcassets */; };
 		A5AC5C781AE64ADA00822C44 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5AC5C761AE64ADA00822C44 /* LaunchScreen.xib */; };
 		A5AC5C841AE64ADA00822C44 /* ApiTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AC5C831AE64ADA00822C44 /* ApiTestTests.m */; };
+		A5AC5C901AE64EBA00822C44 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AC5C8F1AE64EBA00822C44 /* MainViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A5A6FA891AE654B5001994DF /* UITestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITestTableViewController.h; sourceTree = "<group>"; };
+		A5A6FA8A1AE654B5001994DF /* UITestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITestTableViewController.m; sourceTree = "<group>"; };
 		A5AC5C611AE64ADA00822C44 /* ApiTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApiTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5AC5C651AE64ADA00822C44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AC5C661AE64ADA00822C44 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +46,8 @@
 		A5AC5C7D1AE64ADA00822C44 /* ApiTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ApiTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5AC5C821AE64ADA00822C44 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A5AC5C831AE64ADA00822C44 /* ApiTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApiTestTests.m; sourceTree = "<group>"; };
+		A5AC5C8E1AE64EBA00822C44 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		A5AC5C8F1AE64EBA00822C44 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +132,10 @@
 		A5AC5C8D1AE64B8900822C44 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				A5A6FA891AE654B5001994DF /* UITestTableViewController.h */,
+				A5A6FA8A1AE654B5001994DF /* UITestTableViewController.m */,
+				A5AC5C8E1AE64EBA00822C44 /* MainViewController.h */,
+				A5AC5C8F1AE64EBA00822C44 /* MainViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -231,8 +241,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5AC5C6A1AE64ADA00822C44 /* AppDelegate.m in Sources */,
+				A5A6FA8B1AE654B5001994DF /* UITestTableViewController.m in Sources */,
 				A5AC5C6D1AE64ADA00822C44 /* ApiTest.xcdatamodeld in Sources */,
 				A5AC5C701AE64ADA00822C44 /* ViewController.m in Sources */,
+				A5AC5C901AE64EBA00822C44 /* MainViewController.m in Sources */,
 				A5AC5C671AE64ADA00822C44 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +436,7 @@
 				A5AC5C891AE64ADA00822C44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A5AC5C8A1AE64ADA00822C44 /* Build configuration list for PBXNativeTarget "ApiTestTests" */ = {
 			isa = XCConfigurationList;
@@ -432,6 +445,7 @@
 				A5AC5C8C1AE64ADA00822C44 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
