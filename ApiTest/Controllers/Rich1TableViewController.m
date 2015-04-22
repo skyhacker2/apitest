@@ -1,32 +1,29 @@
 //
-//  UITestTableViewController.m
+//  Rich1TableViewController.m
 //  ApiTest
 //
-//  Created by Eleven Chen on 15/4/21.
+//  Created by Eleven Chen on 15/4/22.
 //  Copyright (c) 2015年 Eleven. All rights reserved.
 //
 
-#import "UITestTableViewController.h"
-#import "ButtonTestViewController.h"
+#import "Rich1TableViewController.h"
 
-typedef void (^CreateBlock)(void);
-
-@interface UITestTableViewController ()
-
-@property NSMutableArray* titles;
+@interface Rich1TableViewController ()
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIButton *addButton;
 
 @end
 
-@implementation UITestTableViewController
+@implementation Rich1TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // 初始化变量
-    self.titles = [NSMutableArray new];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"xxx"];
-    [self loadTitles];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,44 +31,33 @@ typedef void (^CreateBlock)(void);
     // Dispose of any resources that can be recreated.
 }
 
-- (void) loadTitles {
-    [self.titles addObject:@"ButtonTest"];
-    [self.titles addObject:@"ProgressTest"];
-    [self.titles addObject:@"AutoLayoutTest"];
-    [self.titles addObject:@"RichTableView1"];
-    [self.titles addObject:@"CustomTableviewCell"];
-    [self.titles addObject:@"TabTest"];
-}
-
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 2;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return 0;
+//}
+- (IBAction)onAddTouchTouch:(id)sender {
+    [self.contentView setHidden:NO];
+    [self.addButton setHidden:YES];
 }
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.titles count];
-}
-
+/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* identifier = @"xxx";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.textLabel.text = [self.titles objectAtIndex:indexPath.row];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    
+    // Configure the cell...
     
     return cell;
 }
-
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row;
-//    CreateBlock block = [self.funcs objectAtIndex:row];
-//    block();
-//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIStoryboard* storyboard = self.navigationController.storyboard;
-    UIViewController* controller = [storyboard instantiateViewControllerWithIdentifier:[self.titles objectAtIndex:row]];
-    [self.navigationController pushViewController:controller animated:YES];
-
-}
-
+*/
 
 /*
 // Override to support conditional editing of the table view.

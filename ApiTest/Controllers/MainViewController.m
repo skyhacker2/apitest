@@ -55,8 +55,8 @@
 
 #pragma mark - tableview select
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    UIViewController* controller = [UITestTableViewController new];
-    [self.navigationController pushViewController:controller animated:YES];
+    UIViewController* controll = [self.navigationController.storyboard instantiateViewControllerWithIdentifier:@"UITest"];
+    [self.navigationController pushViewController:controll animated:YES];
 }
 
 /*

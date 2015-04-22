@@ -1,46 +1,35 @@
 //
-//  UITestTableViewController.m
+//  Rich2TableViewController.m
 //  ApiTest
 //
-//  Created by Eleven Chen on 15/4/21.
+//  Created by Eleven Chen on 15/4/22.
 //  Copyright (c) 2015年 Eleven. All rights reserved.
 //
 
-#import "UITestTableViewController.h"
-#import "ButtonTestViewController.h"
+#import "Rich2TableViewController.h"
+#import "SimpleTableViewCell.h"
 
-typedef void (^CreateBlock)(void);
-
-@interface UITestTableViewController ()
-
-@property NSMutableArray* titles;
+@interface Rich2TableViewController ()
 
 @end
 
-@implementation UITestTableViewController
+@implementation Rich2TableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    UINib* nib = [UINib nibWithNibName:@"SimpleTable" bundle:nil];
+    [self.tableView registerNib:nib forCellReuseIdentifier:@"SimpleTableCell"];
     
-    // 初始化变量
-    self.titles = [NSMutableArray new];
+    // Uncomment the following line to preserve selection between presentations.
+    // self.clearsSelectionOnViewWillAppear = NO;
     
-//    [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"xxx"];
-    [self loadTitles];
+    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
-- (void) loadTitles {
-    [self.titles addObject:@"ButtonTest"];
-    [self.titles addObject:@"ProgressTest"];
-    [self.titles addObject:@"AutoLayoutTest"];
-    [self.titles addObject:@"RichTableView1"];
-    [self.titles addObject:@"CustomTableviewCell"];
-    [self.titles addObject:@"TabTest"];
 }
 
 #pragma mark - Table view data source
@@ -50,26 +39,25 @@ typedef void (^CreateBlock)(void);
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self.titles count];
+    return 5;
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    static NSString* identifier = @"xxx";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
-    cell.textLabel.text = [self.titles objectAtIndex:indexPath.row];
-    
+    static NSString* identifier = @"SimpleTableCell";
+    SimpleTableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:identifier forIndexPath:indexPath];
+    if (cell == nil) {
+        NSArray *nib = [[NSBundle mainBundle] loadNibNamed:@"SimpleTable" owner:self options:nil];
+        cell = [nib objectAtIndex:0];
+    }
+    cell.nameLabel.text = @"Name: Icon1";
+    cell.timeLabel.text = @"Time: 2015-04-22";
+    cell.thumbnailImageView.image = [UIImage imageNamed:@"icon_help.png"];
     return cell;
 }
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    NSInteger row = indexPath.row;
-//    CreateBlock block = [self.funcs objectAtIndex:row];
-//    block();
-//    UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    UIStoryboard* storyboard = self.navigationController.storyboard;
-    UIViewController* controller = [storyboard instantiateViewControllerWithIdentifier:[self.titles objectAtIndex:row]];
-    [self.navigationController pushViewController:controller animated:YES];
-
+-(float)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 78;
 }
 
 
